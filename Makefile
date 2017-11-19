@@ -59,7 +59,7 @@ CFLAGS = -Wall\
 #object files		 
 OBJS = $(SOURCES:.c=.o)
 #output file name
-TARGET = c1final.out
+TARGET = c1final.exe
 #platform dependent changes
 ifeq ($(PLATFORM),HOST)
     CC = gcc
@@ -74,7 +74,7 @@ endif
 .PHONY: build
 build: $(TARGET)
 $(TARGET) : $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) -o $@
+	$(CC) $(OBJS) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -o $@
 
 #building object files
 %.o: %.c

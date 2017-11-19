@@ -13,6 +13,8 @@
 #define MEMORY_H
 #include <stdint.h>
 #include <stdio.h>
+
+#define WORD_SIZE (sizeof(uint32_t))
 /**
  *  This function takes two byte pointers (one source and one destination) and a length of bytes to move from the source location to the destination.
  *  The behavior should handle overlap of source and destination. Copy should occur, with no data corruption.

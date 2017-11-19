@@ -54,37 +54,37 @@ unsigned char print_statistics(unsigned char * arrPtr, int length){
   unsigned char arrayMeanValue;
   unsigned char arrayMedianValue;
   
-  printf("Starting array analysis...\n");
+  PRINTF("Starting array analysis...\n");
   print_array(arrPtr, length);
-  printf("Array size:\t\t%i\n", length);
+  PRINTF("Array size:\t\t%i\n", length);
   
   if(isArraySorted == FALSE){
-    printf("Array is not sorted... Sorting using bubble sort...\n");
+    PRINTF("Array is not sorted... Sorting using bubble sort...\n");
     sortResult = sort_array(arrPtr, length);
   }
   
   if(sortResult != CODE_SUCCESS){
-    printf("Oopps... array_sort returned with error\n");
+    PRINTF("Oopps... array_sort returned with error\n");
     return 1;
   } 
-  printf("Well done!\nSorted array:");
+  PRINTF("Well done!\nSorted array:");
   print_array(arrPtr, length);
   
-  printf("Computing array max value...\n");
+  PRINTF("Computing array max value...\n");
   arrayMaxValue = find_maximum(arrPtr, length);
-  printf("Array max value:\t%i\n", arrayMaxValue);
+  PRINTF("Array max value:\t%i\n", arrayMaxValue);
   
-  printf("Computing array min value...\n");
+  PRINTF("Computing array min value...\n");
   arrayMinValue = find_minimum(arrPtr, length);
-  printf("Array min value:\t%i\n", arrayMinValue);
+  PRINTF("Array min value:\t%i\n", arrayMinValue);
     
-  printf("Computing array mean value...\n");
+  PRINTF("Computing array mean value...\n");
   arrayMeanValue = find_mean(arrPtr, length);
-  printf("Array mean value:\t%i\n", arrayMeanValue);
+  PRINTF("Array mean value:\t%i\n", arrayMeanValue);
       
-  printf("Computing array median value...\n");
+  PRINTF("Computing array median value...\n");
   arrayMedianValue = find_median(arrPtr, length);
-  printf("Array median value:\t%i\n", arrayMedianValue);
+  PRINTF("Array median value:\t%i\n", arrayMedianValue);
   return 0;	
 }
 /*See stats.h for doumentation*/
@@ -93,14 +93,14 @@ unsigned char print_array(unsigned char * arrPtr, int length){
     return 0;
 #endif
   int index = 0;
-  printf("[");
+  PRINTF("[");
   while(1){
-    printf("%i", arrPtr[index]);
+    printf("%hhu", arrPtr[index]);
     if(index == length - 1){
-      printf("]\n");
+      PRINTF("]\n");
       return 0;
     }else{
-      printf(", ");
+      PRINTF(", ");
     }
     index = index + 1;
   }
