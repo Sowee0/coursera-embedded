@@ -59,7 +59,7 @@ CFLAGS = -Wall\
 #object files		 
 OBJS = $(SOURCES:.c=.o)
 #output file name
-TARGET = c1final.exe
+TARGET = c1final.out
 #platform dependent changes
 ifeq ($(PLATFORM),HOST)
     CC = gcc
