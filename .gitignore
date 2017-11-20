@@ -1,1 +1,6 @@
 /nbproject/
+*.o
+*.asm
+*.d
+*.i
+*.map
